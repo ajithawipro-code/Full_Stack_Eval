@@ -12,7 +12,7 @@ export const AccountProvider = ({children}) =>{
     const getBalance = async() =>{
         const res = await getBalanceAPI();
 
-        setAccount(res.data.data);
+        setAccount(res.data);
     }
 
     useEffect(()=>{
@@ -21,7 +21,7 @@ export const AccountProvider = ({children}) =>{
         {
             getBalance()
         }
-    })
+    },[])
 
     const getStatement = async() =>{
 
